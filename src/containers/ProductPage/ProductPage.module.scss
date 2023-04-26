@@ -1,0 +1,229 @@
+@use "../../mixins/mixins.scss";
+
+.Container {
+    width: 100vw;
+    display: flex;
+    gap: 20px;
+    margin: 20px;
+    margin-top: 45px;
+    display: nowrap;
+
+    @include mixins.mobile {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    &_FirstChild {
+        width: 50%;
+        flex: 1;
+        @include mixins.mobile {
+            flex: none;
+            width: 80%;
+            height: 70vw;
+        }
+
+        &-Img {
+            margin-top: 0;
+            width: 100%;
+
+            @include mixins.xxl {
+                height: 40vw;
+            }
+        }
+    }
+    &_SecondChild {
+        flex-direction: column;
+        width: 50%;
+        flex: 1;
+        margin-left: 20px;
+        margin-right: 20px;
+        @include mixins.mobile {
+            gap: 10px;
+        }
+
+        &-Title {
+            font-weight: bold;
+            width: 100%;
+            margin: 0;
+            height: fit-content;
+            flex: 0;
+
+            @include mixins.xxl {
+                width: 70%;
+            }
+            @include mixins.laptop {
+                font-size: 30px;
+            }
+            @include mixins.tablet {
+                font-size: 22px;
+            }
+            @include mixins.mobile {
+                font-size: 22px;
+            }
+        }
+        &-Price {
+            font-weight: bold;
+            width: 100%;
+            margin: 0;
+            height: fit-content;
+            flex: 0;
+            font-size: 22px;
+            @include mixins.laptop {
+                font-size: 19px;
+            }
+            @include mixins.tablet {
+                font-size: 17px;
+            }
+        }
+        &-PaymentOptionPara {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            color: #919191;
+            width: 100%;
+            margin: 0;
+            height: fit-content;
+            flex: 0;
+            font-size: 17px;
+            @include mixins.laptop {
+                font-size: 15px;
+            }
+            @include mixins.xxl {
+                width: 80%;
+            }
+            @include mixins.tablet {
+                font-size: 15px;
+            }
+            &-Logo {
+                height: 54px;
+                width: 50px;
+                &-Bigger {
+                    height: 65px;
+                    width: 60px;
+                }
+            }
+        }
+        &-Select {
+            display: flex;
+            height: 30px;
+            width: 50%;
+            margin: 0;
+            flex: 0;
+            width: 38%;
+
+            @include mixins.xxl {
+                width: 39%;
+            }
+            @include mixins.tablet {
+                font-size: 15px;
+            }
+            @include mixins.mobile {
+                width: 56%;
+            }
+        }
+        &-ShippingPara {
+            width: 80%;
+            background-color: #e5f4ec;
+            margin: 0;
+            height: fit-content;
+            flex: 0;
+            text-align: center;
+            gap: 0;
+            border: 1px solid #33997d;
+            padding: 5px;
+            @include mixins.xxl {
+                width: 39%;
+            }
+            @include mixins.laptop {
+                font-size: 17px;
+            }
+            @include mixins.tablet {
+                font-size: 12px;
+            }
+            @include mixins.mobile {
+                font-size: 14px;
+            }
+        }
+        &-Div {
+            width: 80%;
+            margin: 0;
+            flex: 0;
+            display: grid;
+            flex-wrap: nowrap;
+            border: none;
+            grid-template-columns: 1fr 1fr;
+            justify-content: space-between;
+
+            @include mixins.mobile {
+                grid-template-columns: 70% 30%;
+            }
+            &-Btn {
+                width: 100%;
+                background-color: #33997d;
+
+                height: 35px;
+                flex: 0;
+                color: white;
+                font-weight: bold;
+                display: flex;
+                border: none;
+                padding: 5px;
+
+                justify-content: center;
+                align-items: center;
+
+                @include mixins.laptop {
+                    font-size: 17px;
+                }
+                @include mixins.tablet {
+                    font-size: 12px;
+                }
+                @include mixins.mobile {
+                    font-size: 14px;
+                }
+            }
+            &-FavBtn {
+                height: 35px;
+                width: 38px;
+
+                &:active {
+                    transform: scale(1.3);
+                }
+            }
+        }
+        &-Description {
+            width: 100%;
+            margin: 0;
+            height: fit-content;
+            flex: 0;
+            font-weight: bold;
+            @include mixins.xxl {
+                width: 80%;
+            }
+            @include mixins.tablet {
+                width: 100%;
+            }
+            &-Para {
+                margin: 0;
+                width: 70%;
+                color: #919191;
+
+                @include mixins.xxl {
+                    width: 65%;
+                }
+                @include mixins.tablet {
+                    width: 100%;
+                    font-size: 15px;
+                }
+                @include mixins.laptop {
+                    font-size: 15px;
+                }
+                @include mixins.mobile {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

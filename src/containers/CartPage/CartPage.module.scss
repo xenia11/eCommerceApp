@@ -1,0 +1,247 @@
+@use "../../mixins/mixins.scss";
+
+.CartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    &_Header {
+        flex-basis: 100%;
+        margin-top: 100px;
+        text-align: center;
+        font-weight: bold;
+        justify-content: center;
+        font-size: 30px;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+
+        @include mixins.tablet {
+            font-size: 20px;
+        }
+        @include mixins.mobile {
+            font-size: 15px;
+        }
+    }
+
+    &_FirstChildDiv {
+        margin: 0;
+        flex-basis: 50%;
+        height: fit-content;
+
+        &-ShippingInfo {
+            background-color: #e5f4ec;
+            flex-basis: 75%;
+            border: 2px solid lightgray;
+            text-align: center;
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 15px;
+
+            @include mixins.tablet {
+                font-size: 13px;
+            }
+            @include mixins.mobile {
+                flex-basis: 100%;
+                font-size: 13px;
+            }
+        }
+        &-LeftDiv {
+            height: 200px;
+            background-color: #f7f8f9;
+            @include mixins.tablet {
+                height: 175px;
+            }
+            @include mixins.mobile {
+                height: 170px;
+            }
+            &-Para {
+                padding: 5px;
+                flex-basis: 100%;
+                height: fit-content;
+                @include mixins.tablet {
+                    font-size: 13px;
+                }
+                @include mixins.mobile {
+                    font-size: 13px;
+                }
+            }
+        }
+        &-RightDiv {
+            height: 200px;
+            background-color: #f7f8f9;
+            flex-basis: 25%;
+            justify-content: flex-end;
+            display: grid;
+            @include mixins.tablet {
+                height: 175px;
+            }
+            @include mixins.mobile {
+                flex-basis: 50%;
+                height: 170px;
+            }
+            &-Para {
+                height: fit-content;
+                margin: 0;
+                padding: 5px;
+                @include mixins.tablet {
+                    font-size: 13px;
+                }
+                @include mixins.mobile {
+                    font-size: 13px;
+                }
+            }
+        }
+        &-OrderBtn {
+            flex-basis: 75%;
+            color: white;
+            background-color: #33997d;
+            height: 50px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #7abdaa;
+            }
+            @include mixins.tablet {
+                font-size: 13px;
+            }
+            @include mixins.mobile {
+                font-size: 13px;
+                margin-bottom: 20px;
+                flex-basis: 100%;
+            }
+        }
+    }
+    &_SecondChildDiv {
+        margin: 0;
+        flex-basis: 50%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        @include mixins.mobile {
+            flex-basis: 95%;
+        }
+
+        &-Card {
+            flex-basis: 100%;
+            gap: 0;
+
+            @include mixins.desktop {
+                gap: 10px;
+            }
+            @include mixins.laptop {
+                gap: 10px;
+            }
+            @include mixins.tablet {
+                gap: 10px;
+            }
+
+            &-Left {
+                flex-basis: 30%;
+
+                &-Img {
+                    height: 200px;
+                    width: 100%;
+                }
+            }
+            &-Right {
+                height: 200px;
+                flex-basis: 70%;
+                @include mixins.desktop {
+                    flex-basis: 60%;
+                }
+                @include mixins.laptop {
+                    flex-basis: 60%;
+                }
+                @include mixins.tablet {
+                    flex-basis: 65%;
+                }
+                &-Title {
+                    font-size: 15px;
+                    flex-basis: 70%;
+                    height: fit-content;
+                    text-transform: uppercase;
+                    @include mixins.laptop {
+                        flex-basis: 100%;
+                    }
+                    @include mixins.tablet {
+                        flex-basis: 90%;
+                        font-size: 13px;
+                    }
+                    @include mixins.mobile {
+                        font-size: 13px;
+                    }
+                }
+                &-Price {
+                    font-weight: bold;
+                    height: fit-content;
+                    flex-basis: 100%;
+                    @include mixins.tablet {
+                        font-size: 13px;
+                    }
+                    @include mixins.mobile {
+                        font-size: 13px;
+                    }
+                }
+                &-Qty {
+                    height: fit-content;
+                    flex-basis: fit-content;
+                    border: none;
+                    cursor: pointer;
+                    @include mixins.tablet {
+                        font-size: 13px;
+                    }
+                    @include mixins.mobile {
+                        font-size: 13px;
+                    }
+                }
+                &-Size {
+                    height: fit-content;
+                    flex-basis: 100%;
+                    @include mixins.tablet {
+                        font-size: 13px;
+                    }
+                    @include mixins.mobile {
+                        font-size: 13px;
+                    }
+                }
+
+                &-BtnDiv {
+                    height: fit-content;
+                    flex-basis: 100%;
+                    &-RemoveBtn {
+                        flex-basis: fit-content;
+                        border: none;
+                        &:hover {
+                            font-weight: bold;
+                        }
+                        @include mixins.tablet {
+                            font-size: 13px;
+                        }
+                        @include mixins.mobile {
+                            font-size: 13px;
+                        }
+                    }
+                    &-FavBtn {
+                        flex-basis: fit-content;
+                        border: none;
+                        &:hover {
+                            font-weight: bold;
+                        }
+                        @include mixins.tablet {
+                            font-size: 13px;
+                        }
+                        @include mixins.mobile {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

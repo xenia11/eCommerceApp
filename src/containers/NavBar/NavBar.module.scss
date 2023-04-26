@@ -1,0 +1,45 @@
+@use "../../mixins/mixins.scss";
+
+.NavBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    width: 100vw;
+    height: 50px;
+    border-bottom: 2px solid lightgrey;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    flex-wrap: nowrap;
+    font-weight: bold;
+
+    &_Box {
+        display: flex;
+        justify-content: center;
+        background-color: #e0ede0;
+        border-right: 2px solid lightgrey;
+        padding: 0;
+        height: 100%;
+        z-index: 0;
+        align-items: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #9e9292;
+        &-Active {
+            color: black;
+        }
+
+        @include mixins.mobile {
+            font-size: 12px;
+        }
+        @include mixins.tablet {
+            font-size: 12px;
+        }
+
+        &:hover {
+            color: black;
+        }
+    }
+}

@@ -1,0 +1,125 @@
+@use "../../mixins/mixins.scss";
+
+.ProductsContainer {
+    margin-top: 100px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    text-transform: uppercase;
+    gap: 20px;
+
+    &_FirstChildDiv {
+        margin-top: 0;
+        width: 30%;
+
+        @include mixins.mobile {
+            padding-left: 5px;
+        }
+        &-List {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 4px;
+            @include mixins.xxl {
+                width: 85%;
+            }
+            @include mixins.tv {
+                width: 85%;
+            }
+            width: 85%;
+            @include mixins.desktop {
+            }
+            &-Link {
+                list-style-type: none;
+                border-bottom: 1px groove lightgray;
+                text-decoration: none;
+
+                @include mixins.tablet {
+                    font-size: 13px;
+                }
+                @include mixins.mobile {
+                    font-size: 13px;
+                }
+
+                &:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    &_SecondChildDiv {
+        margin-top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 15px;
+        margin-right: 20px;
+
+        @include mixins.desktop {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        @include mixins.laptop {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        @include mixins.tablet {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include mixins.mobile {
+            grid-template-columns: 1fr;
+        }
+
+        &-Div {
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 470px;
+            margin-bottom: 0;
+            align-content: flex-start;
+            text-align: center;
+            grid-gap: 0;
+
+            @include mixins.tablet {
+                height: 425px;
+            }
+            @include mixins.mobile {
+                height: 273px;
+            }
+
+            &-Title {
+                font-size: 0.8125rem;
+                line-height: 1.25rem;
+                letter-spacing: 0.01625rem;
+                height: fit-content;
+                padding-right: 2px;
+                padding-left: 2px;
+            }
+            &-Category {
+                font-size: 0.75rem;
+                color: #8c8c8c;
+                height: fit-content;
+                font-weight: bold;
+            }
+            &-Price {
+                font-weight: bold;
+                font-size: 0.9375rem;
+                letter-spacing: 0.01812rem;
+                height: fit-content;
+            }
+
+            &-Img {
+                height: 300px;
+                margin-bottom: 10px;
+
+                @include mixins.tablet {
+                    height: 250px;
+                }
+                @include mixins.mobile {
+                    height: 141px;
+                }
+            }
+        }
+    }
+}
+
+.ProductCard {
+    width: 100%;
+}

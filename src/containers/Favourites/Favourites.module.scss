@@ -1,0 +1,145 @@
+@use "../../mixins/mixins.scss";
+
+.Container {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+    margin-right: 20px;
+    width: 100%;
+    align-items: start;
+    @include mixins.tv {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    @include mixins.desktop {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 0;
+    }
+    @include mixins.laptop {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 0;
+    }
+    @include mixins.tablet {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+    @include mixins.mobile {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+    &_Div {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 470px;
+        margin-top: 0;
+        margin-bottom: 0;
+        align-content: space-evenly;
+        text-align: center;
+        grid-gap: 0;
+        align-items: start;
+
+        @include mixins.desktop {
+            height: 435px;
+        }
+        @include mixins.laptop {
+            height: 415px;
+            width: 85%;
+        }
+        @include mixins.tablet {
+            height: 400px;
+            width: 85%;
+        }
+        @include mixins.mobile {
+            height: 390px;
+            padding: 0;
+            width: 85%;
+        }
+
+        &-Title {
+            font-size: 0.8125rem;
+            line-height: 1.25rem;
+            letter-spacing: 0.01625rem;
+            height: fit-content;
+            padding-right: 2px;
+            padding-left: 2px;
+        }
+        &-Category {
+            font-size: 0.75rem;
+            color: #8c8c8c;
+            height: fit-content;
+            font-weight: bold;
+        }
+        &-Price {
+            font-weight: bold;
+            font-size: 0.9375rem;
+            letter-spacing: 0.01812rem;
+            height: fit-content;
+        }
+
+        &-Img {
+            height: 300px;
+            margin-bottom: 10px;
+            @include mixins.desktop {
+                height: 280px;
+                padding: 10px;
+            }
+            @include mixins.laptop {
+                height: 245px;
+                padding: 40px;
+                margin-bottom: 0;
+                width: 100%;
+            }
+            @include mixins.tablet {
+                height: 250px;
+                padding: 20px;
+            }
+            @include mixins.mobile {
+                height: 215px;
+                padding: 20px;
+            }
+        }
+        &-ChildDiv {
+            height: fit-content;
+            width: 100%;
+            align-self: start;
+            flex: 0;
+            display: grid;
+            flex-wrap: nowrap;
+            border: none;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 15px;
+            margin: 5px;
+            padding-right: 26px;
+            padding-left: 26px;
+            place-items: center;
+            align-items: start;
+            &-Btn {
+                font-size: 14px;
+                padding: 0;
+                margin: 0;
+                width: 130px;
+                background-color: #33997d;
+                height: 35px;
+                flex: 0;
+                color: white;
+                font-weight: bold;
+                display: flex;
+                border: none;
+                padding: 5px;
+
+                justify-content: center;
+                align-items: center;
+            }
+            &-FavBtn {
+                padding: 0;
+                margin: 0;
+                height: 35px;
+                width: 38px;
+            }
+        }
+    }
+}
