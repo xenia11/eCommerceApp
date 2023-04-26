@@ -17,7 +17,15 @@ Features
 
 
 Home Page: Displays featured products and allows users to browse products by category.
+
+
 Product Listing by Category: Allows users to filter products by category and view the details of each product.
+
+
 Product Details Page: Displays detailed information about a selected product, including image, title, price, description, and size options. Users can add the product to their cart or mark it as a favorite.
+
+
 Favorites Functionality: Users can mark products as favorites, and the favorited products are stored in Firebase for future reference.
+
+
 Shopping Cart: Users can add products to their shopping cart, view the cart items, and remove items from the cart. Cart data is stored in Firebase for persistent cart functionality.
