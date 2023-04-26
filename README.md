@@ -1,6 +1,8 @@
 # eCommerceApp
 
 E-commerce Project
+
+
 This is an e-commerce project built using React, SASS, and Firebase. It includes features such as home page, product listing by category, product details page, favorites functionality, and a shopping cart.
 
 Technologies Used
