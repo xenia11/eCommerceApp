@@ -56,7 +56,7 @@ const CardPage = () => {
             const items = await getCartContentForUser("4yBcTXppQNWHjtUaFghT");
             const result = await items;
             const data = result;
-            console.log(result);
+
             setItemsInCart(data);
         };
         wrapper();
