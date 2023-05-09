@@ -13,7 +13,7 @@ const CardPage = () => {
     const [update, setUpdate] = useState(false);
     const qty = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-    //limit to quantity func cleanup to throw error
+    //TODO: limit to quantity func cleanup to throw error
 
     const totalPrice = itemsInCart.reduce((acc, product) => {
         const price = parseFloat(product.product.price);

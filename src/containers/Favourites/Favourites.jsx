@@ -5,17 +5,27 @@ import styles from "./Favourites.module.scss";
 import favTrue from "../../assets/fav-true.png";
 import { deleteFromFavorites } from "../../services/addToFav.services";
 import { useNavigate } from "react-router-dom";
+import { getProductById } from "../../services/products.services";
 
 const Favourites = ({ products }) => {
     const [favProductsId, setFavProductsId] = useState([]);
     const [favorites, setFavorites] = useState([]);
     const [removeFavResponse, setRemoveFavResponse] = useState(false);
-    const navigate = useNavigate();
 
-    const removeFromFavorites = (event) => {
+    const populateFavourites = async () => {
+        const ids = await getAllFavProducts("4yBcTXppQNWHjtUaFghT");
+        const promises = ids.map((id) => getProductById(id));
+        const products = await Promise.all(promises);
+
+        setFavorites(products);
+    };
+    const removeFromFavorites = async (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
         const wrapper = async () => {
             const productId = event.target.getAttribute("data-id");
-            const removeFunc = deleteFromFavorites(
+            const removeFunc = await deleteFromFavorites(
                 "4yBcTXppQNWHjtUaFghT",
                 productId
             );
@@ -24,39 +34,20 @@ const Favourites = ({ products }) => {
             setRemoveFavResponse(true);
         };
         wrapper();
-        navigate("/favorites");
+        populateFavourites();
     };
 
     const handleAddToBag = async () => {};
 
     useEffect(() => {
-        const wrapper = async () => {
-            const items = await getAllFavProducts("4yBcTXppQNWHjtUaFghT");
-            const result = await items;
-            const data = result;
-            setFavProductsId(data);
-        };
-        wrapper();
+        populateFavourites();
     }, []);
-
-    useEffect(() => {
-        const wrapper = async () => {
-            const arr = [];
-            products &&
-                products.map(
-                    (product) =>
-                        favProductsId.includes(product.uid) && arr.push(product)
-                );
-            setFavorites(arr);
-        };
-        wrapper();
-    }, [favProductsId]);
 
     return (
         <div className={styles.Container}>
             {favorites &&
                 favorites.map((product) => (
-                    <ProductCard productId={product.uid} key={product.uid}>
+                    <ProductCard productId={product.id} key={product.id}>
                         <div
                             className={`${styles.Container} ${styles.Container_Div}`}
                         >
@@ -91,7 +82,7 @@ const Favourites = ({ products }) => {
                                 </button>
 
                                 <img
-                                    data-id={product.uid}
+                                    data-id={product.id}
                                     onClick={removeFromFavorites}
                                     className={`${styles.Container} ${styles.Container_Div} ${styles["Container_Div-ChildDiv"]} ${styles["Container_Div-ChildDiv-FavBtn"]}`}
                                     src={favTrue}
