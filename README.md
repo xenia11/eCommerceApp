@@ -27,7 +27,7 @@ Product Details Page: Displays detailed information about a selected product, in
 
 Favorites Functionality: Users can mark products as favorites, and the favorited products are stored in Firebase for future reference.
 
-Website Link: https://master--coruscating-melba-c6d3e2.netlify.app/
-
 
 Shopping Cart: Users can add products to their shopping cart, view the cart items, and remove items from the cart. Cart data is stored in Firebase for persistent cart functionality.
+
+Website Link: https://master--coruscating-melba-c6d3e2.netlify.app/
